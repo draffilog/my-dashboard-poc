@@ -22,7 +22,7 @@ const USDCPage: React.FC = () => {
         container_id: 'tradingview_usdc',
       });
     };
-    document.getElementById('tradingview-widget-container-usdc').appendChild(script);
+    document.getElementById('tradingview-widget-container-usdc')?.appendChild(script) ?? document.body.appendChild(script);
   }, []);
 
   return (

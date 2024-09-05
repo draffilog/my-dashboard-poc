@@ -22,7 +22,7 @@ const USDTPage: React.FC = () => {
         container_id: 'tradingview_b3aa3',
       });
     };
-    document.getElementById('tradingview-widget-container').appendChild(script);
+    document.getElementById('tradingview-widget-container')?.appendChild(script) ?? document.body.appendChild(script);
   }, []);
 
   return (

@@ -22,7 +22,7 @@ const RLUSDPage: React.FC = () => {
         container_id: 'tradingview_rlusd',
       });
     };
-    document.getElementById('tradingview-widget-container-rlusd').appendChild(script);
+    document.getElementById('tradingview-widget-container-rlusd')?.appendChild(script) ?? document.body.appendChild(script);
   }, []);
 
   return (

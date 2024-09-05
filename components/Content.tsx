@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const Content: React.FC = () => {
-  return (
-    <div className="p-6 bg-white rounded-lg shadow">
-      <h2 className="text-lg font-semibold mb-4">Overview</h2>
-      {/* Insert chart, tables, or other components here */}
-      <p>This is where your main content will go.</p>
-    </div>
-  );
+interface ContentProps {
+  children: ReactNode;
+}
+
+const Content: React.FC<ContentProps> = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 export default Content;
