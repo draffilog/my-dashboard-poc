@@ -19,8 +19,11 @@ const options = {
     y: {
       beginAtZero: true,
       ticks: {
-        callback: function (value: number) {
-          return '$' + value.toLocaleString() + 'B';
+        callback: function(value: number | string, index: number, ticks: any[]) {
+          if (typeof value === 'number') {
+            return '$' + value.toLocaleString() + 'B';
+          }
+          return value;
         },
       },
     },

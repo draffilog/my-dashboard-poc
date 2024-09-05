@@ -2,7 +2,11 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
-const Layout: React.FC<{ hideSidebar?: boolean, hideHeaderElements?: boolean }> = ({ children, hideSidebar, hideHeaderElements }) => {
+const Layout: React.FC<{
+  children: React.ReactNode;
+  hideSidebar?: boolean;
+  hideHeaderElements?: boolean;
+}> = ({ children, hideSidebar, hideHeaderElements }) => {
   return (
     <div className="flex h-screen bg-gray-100">
       {!hideSidebar && <Sidebar />}
