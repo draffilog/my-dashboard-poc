@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const questsData = [
   {
@@ -11,6 +12,17 @@ const questsData = [
     rewardType: 'RWA Tokens',
     raiseFunds: '$5M',
     twitterScore: '15K',
+  },
+  {
+    name: 'Zoth',
+    taskType: 'Testnet',
+    updatedStatus: (
+      <span className="text-2xl">👌</span>
+    ),
+    statusText: 'Confirmed - TBA',
+    rewardType: 'Airdrop',
+    raiseFunds: '',
+    twitterScore: '25K',
   },
   {
     name: 'RWA Governance Participation',
@@ -77,7 +89,11 @@ const QuestsTable: React.FC = () => {
           <tbody className="text-gray-600 text-sm font-light">
             {questsData.map((quest, index) => (
               <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
-                <td className="py-3 px-6 text-left">{quest.name}</td>
+                <td className="py-3 px-6 text-left">
+                  <Link href={`/quests/${quest.name.toLowerCase()}`}>
+                    <span className="font-medium text-blue-500 hover:underline cursor-pointer">{quest.name}</span>
+                  </Link>
+                </td>
                 <td className="py-3 px-6 text-left">{quest.taskType}</td>
                 <td className="py-3 px-6 text-left">
                   {quest.updatedStatus} <span className="ml-2">{quest.statusText}</span>

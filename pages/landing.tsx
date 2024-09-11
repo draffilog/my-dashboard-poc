@@ -1,11 +1,11 @@
 import React from 'react';
 import LandingLayout from '../components/LandingLayout';
 import { motion } from 'framer-motion';
-import { ArrowRightIcon } from '@heroicons/react/solid';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import '../src/app/landing.css'; // Import the landing-specific CSS
-import { NextPageWithLayout } from '../types/next-page';
+import { NextPage } from 'next';
 
-const LandingPage: NextPageWithLayout = () => {
+const LandingPage: NextPage = () => {
   return (
     <LandingLayout>
       {/* Navigation Bar */}
@@ -59,3 +59,4 @@ const LandingPage: NextPageWithLayout = () => {
 LandingPage.useLayout = "landing"; // Ensure this line is included
 
 export default LandingPage;
+

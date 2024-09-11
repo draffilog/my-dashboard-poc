@@ -215,7 +215,28 @@ const Stablecoins: React.FC = () => {
           <div className="mb-4">
             <p className="text-gray-600">Market Caps shows the scale and power law distribution between all stablecoin issuers.</p>
           </div>
-          <Line data={marketCapData} options={marketCapOptions} />
+          <Line data={marketCapData} options={{
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'top' as const,
+              },
+              title: {
+                display: true,
+                text: 'Market Caps',
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function(value: number | string) {
+                    return '$' + value.toString();
+                  },
+                },
+              },
+            },
+          }} />
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-lg font-bold mb-4">Market Caps</h2>
