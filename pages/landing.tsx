@@ -2,6 +2,7 @@ import React from 'react';
 import LandingLayout from '../components/LandingLayout';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link'; // Import Next.js Link component
 import '../src/app/landing.css'; // Import the landing-specific CSS
 import { NextPage } from 'next';
 
@@ -12,10 +13,16 @@ const LandingPage: NextPage = () => {
       <nav className="flex justify-between items-center py-6 px-10 border-b border-gray-200">
         <div className="text-2xl font-bold">tokenize.io</div>
         <div className="flex space-x-8">
-          <a href="/stablecoins" className="text-gray-700 hover:text-gray-900">Dashboard</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900">Research Blog</a>
+          <Link href="/stablecoins">
+            <a className="text-gray-700 hover:text-gray-900">Dashboard</a>
+          </Link>
+          <Link href="#">
+            <a className="text-gray-700 hover:text-gray-900">Research Blog</a>
+          </Link>
         </div>
-        <a href="/stablecoins" className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900">Launch Dashboard</a>
+        <Link href="/stablecoins">
+          <a className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900">Launch Dashboard</a>
+        </Link>
       </nav>
 
       {/* Hero Section */}
@@ -33,9 +40,11 @@ const LandingPage: NextPage = () => {
             Simplifying access to tokenized real-world assets for investors and issuers alike.
           </p>
           <div className="mt-8">
-            <a href="/stablecoins" className="inline-flex items-center px-6 py-3 bg-black text-white rounded-lg text-lg hover:bg-gray-900">
-              Launch Dashboard <ArrowRightIcon className="w-5 h-5 ml-2" />
-            </a>
+            <Link href="/stablecoins">
+              <a className="inline-flex items-center px-6 py-3 bg-black text-white rounded-lg text-lg hover:bg-gray-900">
+                Launch Dashboard <ArrowRightIcon className="w-5 h-5 ml-2" />
+              </a>
+            </Link>
           </div>
         </motion.div>
         <div className="lg:w-1/2 mt-10 lg:mt-0">
@@ -56,7 +65,6 @@ const LandingPage: NextPage = () => {
   );
 };
 
-LandingPage.useLayout = "landing"; // Ensure this line is included
 
 export default LandingPage;
 
