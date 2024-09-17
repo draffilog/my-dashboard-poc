@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ZothQuest: React.FC = () => {
   const [showModal, setShowModal] = useState(false);

@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const RLUSDPage: React.FC = () => {
   useEffect(() => {
@@ -30,7 +32,13 @@ const RLUSDPage: React.FC = () => {
       {/* Header Section */}
       <div className="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
         <div className="flex items-center">
-          <img src="https://seeklogo.com/images/R/ripple-xrp-logo-E97D62205B-seeklogo.com.png" alt="Ripple Logo" className="w-16 h-16 mr-4" />
+          <Image 
+            src="https://seeklogo.com/images/R/ripple-xrp-logo-E97D62205B-seeklogo.com.png" 
+            alt="Ripple Logo" 
+            width={64} 
+            height={64} 
+            layout="fixed"
+          />
           <div>
             <h1 className="text-4xl font-bold text-gray-900">Ripple USD <span className="text-gray-700">$RLUSD</span></h1>
             <p className="text-gray-600 text-sm">Rank: 5 · 3000 Watchlists · Stablecoin</p>
